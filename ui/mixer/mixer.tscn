@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ci1wng1hwtcec"]
 
 [ext_resource type="Script" uid="uid://b2jmawcoy8coq" path="res://ui/mixer/mixer.gd" id="1_kcgyy"]
-[ext_resource type="Theme" uid="uid://5wwgiimot5nw" path="res://theme/new_theme.tres" id="2_kcgyy"]
+[ext_resource type="Theme" uid="uid://5wwgiimot5nw" path="res://theme/theme.tres" id="2_kcgyy"]
 
 [node name="Mixer" type="Control"]
 process_mode = 3

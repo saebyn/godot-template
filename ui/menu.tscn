@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dax0hhxr4xyjj"]
 
 [ext_resource type="Script" uid="uid://s6rq0ofyeie5" path="res://ui/menu.gd" id="1_2ot4n"]
-[ext_resource type="Material" uid="uid://fymyq4epl6wb" path="res://materials/new_shader_material.tres" id="2_2ot4n"]
-[ext_resource type="Theme" uid="uid://5wwgiimot5nw" path="res://theme/new_theme.tres" id="3_jbsda"]
+[ext_resource type="Material" uid="uid://fymyq4epl6wb" path="res://materials/background_material.tres" id="2_2ot4n"]
+[ext_resource type="Theme" uid="uid://5wwgiimot5nw" path="res://theme/theme.tres" id="3_jbsda"]
 [ext_resource type="Script" uid="uid://d0ainskgkimnh" path="res://ui/button.gd" id="4_0bcp5"]
 
 [node name="GameMenu" type="Control"]

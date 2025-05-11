@@ -2,6 +2,8 @@ extends Node
 
 var scores_path: String = "user://high_scores.cfg"
 
+signal game_over(player_won: bool)
+
 class Score extends Resource:
   var score: int
   var initials: String

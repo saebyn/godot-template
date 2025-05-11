@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bpjfqjwcjet8d"]
 
 [ext_resource type="Script" uid="uid://dn7h33di1a608" path="res://ui/high_scores.gd" id="1_kls6h"]
-[ext_resource type="Material" uid="uid://fymyq4epl6wb" path="res://materials/new_shader_material.tres" id="2_n2o4k"]
-[ext_resource type="Theme" uid="uid://5wwgiimot5nw" path="res://theme/new_theme.tres" id="3_p8j76"]
+[ext_resource type="Material" uid="uid://fymyq4epl6wb" path="res://materials/background_material.tres" id="2_n2o4k"]
+[ext_resource type="Theme" uid="uid://5wwgiimot5nw" path="res://theme/theme.tres" id="3_p8j76"]
 
 [node name="HighScores" type="Control"]
 process_mode = 3

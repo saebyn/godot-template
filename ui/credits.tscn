@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b73ltany0lfiq"]
 
 [ext_resource type="Script" uid="uid://b5waksogab2fq" path="res://ui/splash.gd" id="1_2ckv8"]
-[ext_resource type="Theme" uid="uid://5wwgiimot5nw" path="res://theme/new_theme.tres" id="2_0ctdu"]
+[ext_resource type="Theme" uid="uid://5wwgiimot5nw" path="res://theme/theme.tres" id="2_0ctdu"]
 
 [sub_resource type="Theme" id="Theme_4rrho"]
 
@@ -28,11 +28,10 @@ custom_minimum_size = Vector2(483.86, 0)
 layout_mode = 2
 theme = ExtResource("2_0ctdu")
 theme_override_font_sizes/normal_font_size = 27
-text = "saebyn's simple pong game
+text = "<placeholder>
 - made by saebyn <me@saebyn.dev>
 - background shader from https://godotshaders.com/shader/jazz-solo-cup/ (CC-BY-SA)
-- some code from https://github.com/godotengine/godot-demo-projects
-- pong and score sound effects from https://opengameart.org/content/pong-sfx (CC-BY-SA)"
+- some code from https://github.com/godotengine/godot-demo-projects"
 fit_content = true
 scroll_active = false
 

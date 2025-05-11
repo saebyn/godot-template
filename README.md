@@ -9,8 +9,8 @@ This is a template for Godot projects. It includes a basic structure and some co
 ├── .gitignore
 ├── .github
 │   └── workflows
-│       └── godot-ci.yml
-├── assets
+│       └── godot-ci.yml # GitHub Actions for CI
+├── assets               # Binary assets
 │   ├── fonts
 │   ├── images
 │   ├── models
@@ -19,18 +19,20 @@ This is a template for Godot projects. It includes a basic structure and some co
 │   └── textures
 ├── materials
 │   └── shaders
-├── scenes
+├── scenes               # Godot scenes
+│   ├── game.tscn
 │   └── main.tscn
 ├── scripts
 │   ├── gamemanager.gd
 │   └── main.gd
-├── theme
+├── theme                # Theme files for UI
 │   └── theme.tres
-├── ui
+├── ui                   # User Interface components
 │   ├── ...
 │   └── menu.tscn
 ├── LICENSE
 ├── README.md
+├── bus_layout.tres      # Bus layout for audio
 └── project.godot
 ```
 

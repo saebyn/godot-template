@@ -11,9 +11,12 @@ config_version=5
 [application]
 
 config/name="placeholder"
-config/description=""
 run/main_scene="uid://c1ibyecb1dmow"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+
+[audio]
+
+buses/default_bus_layout="res://bus_layout.tres"
 
 [autoload]
 
