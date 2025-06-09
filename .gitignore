@@ -13,3 +13,11 @@ export_credentials.cfg
 .mono/
 data_*/
 mono_crash.*.json
+
+# Test results
+test_results/
+
+# Downloaded binaries and build artifacts
+Godot_*.zip
+*.exe
+*.dmg
