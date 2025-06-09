@@ -18,21 +18,14 @@ func test_game_flow_basic():
 	main_instance.queue_free()
 
 func test_game_manager_signal_connection():
-	# Test that GameManager signals can be connected
-	var signal_received = false
-	var test_callback = func(player_won: bool): signal_received = true
-	
-	# Connect to game_over signal
-	GameManager.game_over.connect(test_callback)
+	# Test that GameManager signals can be connected using Gut's signal watcher
+	watch_signals(GameManager)
 	
 	# Emit the signal
 	GameManager.game_over.emit(true)
 	
-	# Check signal was received
-	assert_true(signal_received, "GameManager game_over signal should be received")
-	
-	# Disconnect signal
-	GameManager.game_over.disconnect(test_callback)
+	# Check signal was emitted
+	assert_signal_emitted(GameManager, "game_over", "GameManager game_over signal should be emitted")
 
 func test_input_actions_exist():
 	# Test that all required input actions are configured
@@ -59,14 +52,14 @@ func test_menu_instantiation_with_signals():
 	var menu_instance = menu_scene.instantiate()
 	add_child(menu_instance)
 	
-	# Test signal connections
-	var signal_received = false
-	var test_callback = func(): signal_received = true
+	# Use Gut's signal watcher
+	watch_signals(menu_instance)
 	
-	menu_instance.start_game.connect(test_callback)
+	# Emit the signal
 	menu_instance.start_game.emit()
 	
-	assert_true(signal_received, "Menu start_game signal should be emitted and received")
+	# Check signal was emitted
+	assert_signal_emitted(menu_instance, "start_game", "Menu start_game signal should be emitted")
 	
 	# Clean up
 	menu_instance.queue_free()
