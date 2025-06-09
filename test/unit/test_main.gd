@@ -30,3 +30,19 @@ func test_project_settings():
 	var app_name = ProjectSettings.get_setting("application/config/name")
 	assert_not_null(app_name, "Application name should be set in project settings")
 	assert_ne(app_name, "", "Application name should not be empty")
+
+func test_boot_splash_configuration():
+	# Test that boot splash is properly configured
+	var splash_image = ProjectSettings.get_setting("application/boot_splash/image")
+	assert_not_null(splash_image, "Boot splash image should be configured")
+	assert_eq(splash_image, "res://assets/images/splash.png", "Boot splash should use custom splash.png")
+	
+	# Test that the splash image file exists
+	assert_true(FileAccess.file_exists("res://assets/images/splash.png"), "Splash screen image file should exist")
+	
+	# Test boot splash settings
+	var fullsize = ProjectSettings.get_setting("application/boot_splash/fullsize")
+	assert_false(fullsize, "Boot splash fullsize should be false for proper scaling")
+	
+	var use_filter = ProjectSettings.get_setting("application/boot_splash/use_filter")
+	assert_true(use_filter, "Boot splash should use filter for smooth rendering")
