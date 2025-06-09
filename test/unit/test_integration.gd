@@ -43,7 +43,7 @@ func test_autoload_initialization():
 	assert_not_null(MixerPersistence, "MixerPersistence autoload should be initialized")
 	
 	# Test that they have expected properties/methods
-	assert_true(GameManager.has_method("reset_game"), "GameManager should have reset_game method")
+	assert_true(GameManager.has_method("setup_game"), "GameManager should have setup_game method")
 	assert_true(GameManager.has_signal("game_over"), "GameManager should have game_over signal")
 
 func test_menu_instantiation_with_signals():

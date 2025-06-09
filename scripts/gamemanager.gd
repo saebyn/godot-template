@@ -14,10 +14,12 @@ class Score extends Resource:
 
 @export var high_scores: Array[Score] = []
 
-func reset_game() -> void:
-  # Reset game state - placeholder for actual game logic
+func setup_game() -> void:
+  # Sets up initial game state when starting a new game
+  # Called when the player starts the game from the main menu
   pass
 
 func restart_level() -> void:
-  # Restart current level - placeholder for actual game logic
+  # Restarts the current level from the beginning
+  # Called when restarting from the pause menu
   pass

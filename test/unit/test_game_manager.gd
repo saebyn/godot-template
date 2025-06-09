@@ -22,12 +22,12 @@ func test_game_manager_has_high_scores_array():
 	var has_high_scores = "high_scores" in game_manager
 	assert_true(has_high_scores, "GameManager should have high_scores property")
 
-func test_game_manager_reset_game():
-	# Test that reset_game method exists and can be called
-	assert_true(game_manager.has_method("reset_game"), "GameManager should have reset_game method")
+func test_game_manager_setup_game():
+	# Test that setup_game method exists and can be called
+	assert_true(game_manager.has_method("setup_game"), "GameManager should have setup_game method")
 	# Should not throw error when called
-	game_manager.reset_game()
-	pass_test("reset_game method executed without error")
+	game_manager.setup_game()
+	pass_test("setup_game method executed without error")
 
 func test_game_manager_restart_level():
 	# Test that restart_level method exists and can be called
