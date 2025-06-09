@@ -28,6 +28,8 @@ Tests are located in the `test/unit/` directory and follow the naming convention
 - `test_game_manager.gd` - Tests for the GameManager singleton
 - `test_main.gd` - Tests for main scene functionality  
 - `test_menu.gd` - Tests for menu UI functionality
+- `test_ui_components.gd` - Tests for UI components and scene loading
+- `test_integration.gd` - Integration tests for game flow and component interactions
 
 ## Writing Tests
 
