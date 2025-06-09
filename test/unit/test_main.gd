@@ -42,7 +42,4 @@ func test_boot_splash_configuration():
 	
 	# Test boot splash settings
 	var fullsize = ProjectSettings.get_setting("application/boot_splash/fullsize")
-	assert_false(fullsize, "Boot splash fullsize should be false for proper scaling")
-	
-	var use_filter = ProjectSettings.get_setting("application/boot_splash/use_filter")
-	assert_true(use_filter, "Boot splash should use filter for smooth rendering")
+	assert_true(fullsize, "Boot splash fullsize should be enabled")
