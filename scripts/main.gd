@@ -69,10 +69,7 @@ func _on_game_menu_start_game() -> void:
   game_menu.hide()
   
   # Load and instantiate the game scene
-  if not game_scene:
-    game_scene = game_scene_packed.instantiate()
-    add_child(game_scene)
-  
+  ensure_game_scene_loaded()
   # Show the game scene
   game_scene.show()
 
