@@ -46,6 +46,13 @@ func resume_game() -> void:
     game_menu.unpause()
 
 
+func ensure_game_scene_loaded() -> void:
+  # Ensure the game scene is loaded and added to the scene tree
+  if not game_scene:
+    game_scene = game_scene_packed.instantiate()
+    add_child(game_scene)
+
+
 func _on_game_menu_exit_game() -> void:
   # Exit the game
   get_tree().quit()
@@ -83,10 +90,8 @@ func _on_game_menu_restart_game() -> void:
   print("Restarting game")
   
   # Ensure game scene is loaded before restarting
-  if not game_scene:
-    game_scene = game_scene_packed.instantiate()
-    add_child(game_scene)
-    game_scene.show()
+  ensure_game_scene_loaded()
+  game_scene.show()
   
   GameManager.restart_level()
   resume_game()
