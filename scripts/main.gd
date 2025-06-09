@@ -1,8 +1,11 @@
 extends Node2D
 
 @onready var game_menu := $GameMenu
-@onready var game_scene := $GameScene
 @onready var music_player := $MusicAudioStreamPlayer
+
+# Dynamic game scene management
+var game_scene: Node2D = null
+var game_scene_packed: PackedScene = preload("res://scenes/game.tscn")
 
 func _ready() -> void:
   GameManager.game_over.connect(_on_game_manager_game_over)
@@ -13,7 +16,8 @@ func _on_game_manager_game_over(player_won: bool) -> void:
   get_tree().paused = true
   # Load the game over screen
   game_menu.show()
-  game_scene.hide()
+  if game_scene:
+    game_scene.hide()
 
 func _input(event: InputEvent) -> void:
   if event.is_action_pressed("ui_cancel"):
@@ -32,10 +36,21 @@ func is_game_paused() -> bool:
 
 
 func pause_game() -> void:
-  game_menu.pause()
+  # Only pause if there's an active game scene
+  if game_scene:
+    game_menu.pause()
 
 func resume_game() -> void:
-  game_menu.unpause()
+  # Only unpause if there's an active game scene
+  if game_scene:
+    game_menu.unpause()
+
+
+func ensure_game_scene_loaded() -> void:
+  # Ensure the game scene is loaded and added to the scene tree
+  if not game_scene:
+    game_scene = game_scene_packed.instantiate()
+    add_child(game_scene)
 
 
 func _on_game_menu_exit_game() -> void:
@@ -47,7 +62,11 @@ func _on_game_menu_return_main_menu() -> void:
   # Return to the main menu
   get_tree().paused = true
   game_menu.show()
-  game_scene.hide()
+  
+  # Unload the game scene completely
+  if game_scene:
+    game_scene.queue_free()
+    game_scene = null
 
 
 func _on_game_menu_start_game() -> void:
@@ -56,7 +75,9 @@ func _on_game_menu_start_game() -> void:
   # Hide the game menu
   game_menu.hide()
   
-  # Start the game scene
+  # Load and instantiate the game scene
+  ensure_game_scene_loaded()
+  # Show the game scene
   game_scene.show()
 
   # start the music
@@ -67,5 +88,10 @@ func _on_game_menu_start_game() -> void:
 
 func _on_game_menu_restart_game() -> void:
   print("Restarting game")
+  
+  # Ensure game scene is loaded before restarting
+  ensure_game_scene_loaded()
+  game_scene.show()
+  
   GameManager.restart_level()
   resume_game()
