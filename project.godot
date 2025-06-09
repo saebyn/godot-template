@@ -8,14 +8,17 @@
 
 config_version=5
 
+[addons]
+
+enabled=PackedStringArray("gut")
+
 [application]
 
 config/name="placeholder"
 run/main_scene="uid://c1ibyecb1dmow"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/image="res://assets/images/splash.png"
-boot_splash/fullsize=false
-boot_splash/use_filter=true
+boot_splash/minimum_display_time=3400
 
 [audio]
 
@@ -58,7 +61,3 @@ move_right={
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
-
-[addons]
-
-enabled=PackedStringArray("gut")
